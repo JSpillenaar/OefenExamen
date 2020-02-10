@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bestelling index{% endblock %}
+
+{% block body %}
+    <h1>Bestelling index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Menu Item</th>
+                <th>Reservering</th>
+                <th>Tafel</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for bestelling in bestellings %}
+            <tr>
+                <td>{{ bestelling.id }}</td>
+                <td>{{ bestelling.menuitem }}</td>
+                <td>{{ bestelling.reservering }}</td>
+                <td>{{ bestelling.tafel }}</td>
+                <td>
+                    <a href="{{ path('bestelling_show', {'id': bestelling.id}) }}">show</a>
+                    <a href="{{ path('bestelling_edit', {'id': bestelling.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="2">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('bestelling_new') }}">Create new</a>
+{% endblock %}

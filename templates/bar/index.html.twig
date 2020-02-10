@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello BarController!{% endblock %}
+
+{% block body %}
+    {% for bar in bar %}
+        <td>{{ bar.id }}</td>
+        <td>{{ bar.naam }}</td>
+    {% endfor %}
+{% endblock %}
