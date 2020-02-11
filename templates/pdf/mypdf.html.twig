@@ -3,8 +3,26 @@
 {% block title %}Hello PdfController!{% endblock %}
 
 {% block body %}
-<style>
-    .navContainer { display: none};
-</style>
-
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Menu Item</th>
+            <th>Reservering</th>
+            <th>Tafel</th>
+            <th>bon</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for bestelling in bestelling %}
+        <tr>
+            <td>{{ bestelling.id }}</td>
+            <td>{{ bestelling.menuitem }}</td>
+            <td>{{ bestelling.reservering }}</td>
+            <td>{{ bestelling.bon }}</td>
+            <td>{{ bestelling.tafel }}</td>
+        </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}
