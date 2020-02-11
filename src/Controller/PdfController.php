@@ -4,7 +4,6 @@ namespace App\Controller;
 use App\Entity\MenuItem;
 use Dompdf\Dompdf;
 use App\Entity\Bestelling;
-use App\Entity\Menu;
 use Dompdf\Options;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
