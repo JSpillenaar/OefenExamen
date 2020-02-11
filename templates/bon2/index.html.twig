@@ -1,11 +1,30 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Hello Bon2Controller!{% endblock %}
-
 {% block body %}
+    <h1>Bon Informatie</h1>
 
-    {% for bon in bon %}
-        {{ bon.id }}
-    {% endfor %}
-
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Menu Item</th>
+            <th>Reservering</th>
+            <th>Tafel</th>
+            <th>bon</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        {% for bon in bon %}
+            <td>{{ bon.id }}</td>
+            <td>{{ bon.menuitem }}</td>
+            <td>{{ bon.reservering }}</td>
+            <td>{{ bon.bon }}</td>
+            <td>{{ bon.tafel }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+        <a href="/pdf">Print Bon</a>
+    </table>
 {% endblock %}

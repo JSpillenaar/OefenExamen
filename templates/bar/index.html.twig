@@ -3,8 +3,9 @@
 {% block title %}Hello BarController!{% endblock %}
 
 {% block body %}
-    {% for bar in bar %}
-        <td>{{ bar.id }}</td>
-        <td>{{ bar.naam }}</td>
-    {% endfor %}
+        {% for bar in bar %}
+{#            {% if(bestelling_id.meniutem_id.subgerecht_id.gerecht_id == '2') %}#}
+{#                {{ bar.bestelling }}#}
+{#            {% endif %}#}
+        {% endfor %}
 {% endblock %}

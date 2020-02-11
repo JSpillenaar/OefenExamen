@@ -12,6 +12,7 @@
                 <th>Menu Item</th>
                 <th>Reservering</th>
                 <th>Tafel</th>
+                <th>Bon Nummer</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -22,9 +23,11 @@
                 <td>{{ bestelling.menuitem }}</td>
                 <td>{{ bestelling.reservering }}</td>
                 <td>{{ bestelling.tafel }}</td>
+                <td>{{ bestelling.bon }}</td>
                 <td>
                     <a href="{{ path('bestelling_show', {'id': bestelling.id}) }}">show</a>
                     <a href="{{ path('bestelling_edit', {'id': bestelling.id}) }}">edit</a>
+                    <a href="/bon2/ {{ bestelling.bon }}">Bon</a>
                 </td>
             </tr>
         {% else %}

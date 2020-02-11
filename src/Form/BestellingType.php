@@ -15,6 +15,7 @@ class BestellingType extends AbstractType
             ->add('menuitem')
             ->add('reservering')
             ->add('tafel')
+            ->add('bon')
         ;
     }
 

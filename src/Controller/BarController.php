@@ -16,7 +16,8 @@ class BarController extends AbstractController
      */
     public function index()
     {
-        $bar = $this->getDoctrine()->getRepository(MenuItem::class)->findBy(array('subgerechtsoort' => array(3, 4)));
+//        $bar = $this->getDoctrine()->getRepository(MenuItem::class)->findBy(array('subgerechtsoort' => array(3, 4)));
+        $bar = $this->getDoctrine()->getRepository(Bestelling::class)->findAll();
 
         return $this->render('bar/index.html.twig', [
             'bar' => $bar,
