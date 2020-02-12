@@ -11,9 +11,9 @@ use Symfony\Component\Routing\Annotation\Route;
 class PdfController extends AbstractController
 {
     /**
-     * @Route("/pdf", name="pdf")
+     * @Route("/pdf/{id}", name="pdf")
      */
-    public function index()
+    public function index($id)
     {
         // Configure Dompdf according to your needs
         $pdfOptions = new Options();
@@ -23,9 +23,9 @@ class PdfController extends AbstractController
         $dompdf = new Dompdf($pdfOptions);
 
         // Retrieve the HTML generated in our twig file
-        $html = $this->renderView('pdf/mypdf.html.twig', [ 'bestelling' =>
-            $this->getDoctrine()->getRepository(Bestelling::class)->
-            findAll(), 'product' => $this->getDoctrine()->getRepository(MenuItem::class)->findAll() ]);
+        $html = $this->renderView('pdf/mypdf.html.twig', [
+            'bestelling' => $this->getDoctrine()->getRepository(Bestelling::class)->findBy(['bon' => $id])
+        ]);
 
         // Load HTML to Dompdf
         $dompdf->loadHtml($html);
