@@ -17,6 +17,7 @@ class Bon2Controller extends AbstractController
         $bon = $this->getDoctrine()->getRepository(Bestelling::class)->findBy(['bon' => $id]);
         return $this->render('bon2/index.html.twig', [
             'bon' => $bon,
+            'id' => $id,
             'controller_name' => 'Bon2Controller',
         ]);
     }

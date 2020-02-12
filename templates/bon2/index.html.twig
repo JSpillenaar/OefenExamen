@@ -23,8 +23,8 @@
             <td>{{ bon.tafel }}</td>
             <td>{{ bon.bon }}</td>
         </tr>
-        <a href="/pdf/ {{ bon.bon }}">Print Bon</a>
         {% endfor %}
         </tbody>
     </table>
+    <a href="/pdf/{{ id }}">Print Bon</a>
 {% endblock %}
