@@ -3,9 +3,6 @@
 namespace App\Controller;
 
 use App\Entity\Bestelling;
-use App\Entity\Gerecht;
-use App\Entity\MenuItem;
-use App\Entity\Reservering;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -17,10 +14,11 @@ class BarController extends AbstractController
     public function index()
     {
 //        $bar = $this->getDoctrine()->getRepository(MenuItem::class)->findBy(array('subgerechtsoort' => array(3, 4)));
-        $bar = $this->getDoctrine()->getRepository(Bestelling::class)->findAll();
+         $bestelling = $this->getDoctrine()->getRepository(Bestelling::class)->findAll();
+
 
         return $this->render('bar/index.html.twig', [
-            'bar' => $bar,
+            'bestelling' => $bestelling,
             'controller_name' => 'BarController',
         ]);
     }

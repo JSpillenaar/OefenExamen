@@ -1,11 +1,25 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Hello BarController!{% endblock %}
-
 {% block body %}
-        {% for bar in bar %}
-{#            {% if(bestelling_id.meniutem_id.subgerecht_id.gerecht_id == '2') %}#}
-{#                {{ bar.bestelling }}#}
-{#            {% endif %}#}
+    <h1>Bestellingen voor Bar</h1>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Menu Item</th>
+            <th>Tafel</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            {% for bestelling in bestelling %}
+            {% if(bestelling.menuitem.id == '3') or (bestelling.menuitem.id == '4') %}
+            <td>{{ bestelling.menuitem }}</td>
+            <td>{{ bestelling.tafel }}</td>
+        </tr>
+        {% endif %}
         {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}
