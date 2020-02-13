@@ -20,7 +20,7 @@ class KeukenController extends AbstractController
         ]);
     }
     /**
-     * @Route("/keuken/{id}", name="acceptgerecht")
+     * @Route("/keuken/{id}/accept", name="acceptgerecht")
      */
     public function acceptgerecht($id)
     {
