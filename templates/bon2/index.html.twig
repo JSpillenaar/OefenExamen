@@ -12,6 +12,8 @@
             <th>Reservering</th>
             <th>Tafel</th>
             <th>bon</th>
+            <th>prijs</th>
+
         </tr>
         </thead>
         <tbody>
@@ -22,8 +24,10 @@
             <td>{{ bon.reservering }}</td>
             <td>{{ bon.tafel }}</td>
             <td>{{ bon.bon }}</td>
+            <td>{{ bon.menuitem.prijs }}</td>
         </tr>
         {% endfor %}
+            <td>Totaal = {{ totaal }}</td>
         </tbody>
     </table>
     <a href="/pdf/{{ id }}">Print Bon</a>
