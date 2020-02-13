@@ -14,7 +14,7 @@
         <tbody>
         <tr>
             {% for bestelling in bestelling %}
-            {% if(bestelling.menuitem.id == '3') or (bestelling.menuitem.id == '4') %}
+            {% if(bestelling.menuitem.subgerechtsoort.id == '3') or (bestelling.menuitem.subgerechtsoort.id == '4') %}
             <td>{{ bestelling.menuitem }}</td>
             <td>{{ bestelling.tafel }}</td>
         </tr>
