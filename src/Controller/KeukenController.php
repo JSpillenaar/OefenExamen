@@ -19,4 +19,30 @@ class KeukenController extends AbstractController
             'controller_name' => 'KeukenController',
         ]);
     }
+    /**
+     * @Route("/keuken/{id}", name="acceptgerecht")
+     */
+    public function acceptgerecht($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $gereedgerecht = $this->getDoctrine()->getRepository(Bestelling::class)->find($id);
+        $gereedgerecht->setGereed(true);
+        $em->persist($gereedgerecht);
+        $em->flush();
+
+        return $this->redirect('/keuken');
+    }
+    /**
+     * @Route("/keuken/{id}/decline", name="declinegerecht")
+     */
+    public function declinegerecht($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $teruggerecht = $this->getDoctrine()->getRepository(Bestelling::class)->find($id);
+        $teruggerecht->setGereed(false);
+        $em->persist($teruggerecht);
+        $em->flush();
+
+        return $this->redirect('/keuken');
+    }
 }

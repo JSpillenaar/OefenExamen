@@ -36,6 +36,11 @@ class Bestelling
      */
     private $tafel;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $Gereed;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -85,6 +90,18 @@ class Bestelling
     public function setTafel(?Reservering $tafel): self
     {
         $this->tafel = $tafel;
+
+        return $this;
+    }
+
+    public function getGereed(): ?bool
+    {
+        return $this->Gereed;
+    }
+
+    public function setGereed(bool $Gereed): self
+    {
+        $this->Gereed = $Gereed;
 
         return $this;
     }

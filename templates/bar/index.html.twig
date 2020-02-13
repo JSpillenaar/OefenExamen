@@ -9,17 +9,46 @@
         <tr>
             <th>Menu Item</th>
             <th>Tafel</th>
+            <th>Gereed</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            {% for bestelling in bestelling %}
+                {% if(bestelling.menuitem.subgerechtsoort.id == '3') or (bestelling.menuitem.subgerechtsoort.id == '4') %}
+                    {% if (bestelling.gereed == '0') %}
+                        <td>{{ bestelling.menuitem }}</td>
+                        <td>{{ bestelling.tafel }}</td>
+                        <td><a href="/bar/{{bestelling.id}}/approve">Klik Hier</a></td>
+                    </tr>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </tbody>
+    </table>
+<br>
+<h1>Bestellingen al klaar</h1>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Menu Item</th>
+            <th>Tafel</th>
+            <th>Terugzetten</th>
         </tr>
         </thead>
         <tbody>
         <tr>
             {% for bestelling in bestelling %}
             {% if(bestelling.menuitem.subgerechtsoort.id == '3') or (bestelling.menuitem.subgerechtsoort.id == '4') %}
+            {% if (bestelling.gereed == '1') %}
             <td>{{ bestelling.menuitem }}</td>
             <td>{{ bestelling.tafel }}</td>
+            <td><a href="/bar/{{bestelling.id}}/decline">Klik Hier</a></td>
         </tr>
+        {% endif %}
         {% endif %}
         {% endfor %}
         </tbody>
     </table>
 {% endblock %}
+
