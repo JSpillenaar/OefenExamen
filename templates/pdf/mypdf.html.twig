@@ -12,7 +12,8 @@
             <th>Menu Item</th>
             <th>Reservering</th>
             <th>Tafel</th>
-            <th>bon</th>
+            <th>Bon</th>
+            <th>Prijs</th>
         </tr>
         </thead>
         <tbody>
@@ -23,6 +24,8 @@
             <td>{{ bestelling.reservering }}</td>
             <td>{{ bestelling.tafel }}</td>
             <td>{{ bestelling.bon }}</td>
+            <td>{{ bestelling.menuitem.prijs }}</td>
+
         </tr>
         {% endfor %}
         </tbody>
